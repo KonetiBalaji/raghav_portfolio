@@ -1,0 +1,39 @@
+:root {
+  --color-bg-light: #ffffff;
+  --color-text-light: #1f2937;
+  --color-bg-dark: #111827;
+  --color-text-dark: #f9fafb;
+}
+
+.light {
+  color-scheme: light;
+  --color-bg: var(--color-bg-light);
+  --color-text: var(--color-text-light);
+}
+
+.dark {
+  color-scheme: dark;
+  --color-bg: var(--color-bg-dark);
+  --color-text: var(--color-text-dark);
+}
+
+html, body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Tailwind imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme transition fix */
+.theme-transition {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
