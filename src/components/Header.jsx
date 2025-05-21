@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 
-export default function Header({ theme, toggleTheme }) {
+export default function Header({ theme, setTheme }) {
   return (
     <header className="fixed top-0 w-full z-50 bg-white dark:bg-gray-900 shadow-sm border-b overflow-x-auto">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4 whitespace-nowrap">
@@ -37,10 +37,10 @@ export default function Header({ theme, toggleTheme }) {
           ))}
         </nav>
 
-        {/* Theme Toggle Button */}
+        {/* Theme Toggle Only */}
         <div className="flex items-center">
           <button
-            onClick={toggleTheme}
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             className="text-xl text-gray-800 dark:text-white hover:text-indigo-500 dark:hover:text-indigo-400 transition"
             aria-label="Toggle Theme"
             title="Toggle Light/Dark Mode"
